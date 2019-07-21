@@ -1,0 +1,25 @@
+<div>
+  <label>Text:
+    <textarea [(ngModel)]="translation.text" placeholder="Text"></textarea>
+  </label>
+</div>
+<div>
+  <label>Übersetzung:
+    <textarea [(ngModel)]="translation.translation" placeholder="Übersetzung"></textarea>
+  </label>
+</div>
+<div>
+  <label>Autor:
+    <input [(ngModel)]="translation.source.author" placeholder="Autor"/>
+  </label>
+</div>
+<div>
+  <label>URL:
+    <input [(ngModel)]="translation.source.url" placeholder="URL"/>
+  </label>
+</div>
+<div>
+  <button (click)="add()">
+    add
+  </button>
+</div>

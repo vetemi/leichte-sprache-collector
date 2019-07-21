@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Translation } from 'src/model/translation';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { Translation } from 'src/model/translation';
 })
 export class AppComponent {
   title = 'Hallo';
-  translation: Translation
 }
