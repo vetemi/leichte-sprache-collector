@@ -1,16 +1,21 @@
 <div>
   <label>Text:
-    <textarea [(ngModel)]="translation.text" placeholder="Text"></textarea>
+    <textarea rows = "10" cols = "50" [(ngModel)]="translation.text" placeholder="Text"></textarea>
   </label>
 </div>
 <div>
   <label>Übersetzung:
-    <textarea [(ngModel)]="translation.translation" placeholder="Übersetzung"></textarea>
+    <textarea rows = "10" cols = "50" [(ngModel)]="translation.translation" placeholder="Übersetzung"></textarea>
   </label>
 </div>
 <div>
   <label>Autor:
     <input [(ngModel)]="translation.source.author" placeholder="Autor"/>
+  </label>
+</div>
+<div>
+  <label>Herausgeber/Verlag:
+    <input [(ngModel)]="translation.source.publisher" placeholder="Verlag/Herausgeber"/>
   </label>
 </div>
 <div>
