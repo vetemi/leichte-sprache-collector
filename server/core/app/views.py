@@ -16,8 +16,8 @@ class ListCreateTranslationView(generics.ListCreateAPIView):
   def post(self, request, *args, **kwargs):
     createdSource = self.createSource(request)
     createdTranslation = Translation.objects.create(
-      text = request.data['text'],
-      translation = request.data['translation'],
+      text = request.data['text'].strip(),
+      translation = request.data['translation'].strip(),
       source = createdSource
     )
     return Response(
@@ -28,13 +28,13 @@ class ListCreateTranslationView(generics.ListCreateAPIView):
   def createSource(self, request):
     try:
       return Source.objects.create(
-        author=request.data['source']['author'],
-        url=request.data['source']['url'],
-        publisher=request.data['source']['publisher']
+        author=request.data['source']['author'].strip(),
+        url=request.data['source']['url'].strip(),
+        publisher=request.data['source']['publisher'].strip()
       )
     except IntegrityError:
       return Source.objects.get(
-        author = request.data['source']['author'],
-        url = request.data['source']['url'], 
-        publisher = request.data['source']['publisher'])
+        author = request.data['source']['author'].strip(),
+        url = request.data['source']['url'].strip(), 
+        publisher = request.data['source']['publisher'].strip())
 

@@ -16,6 +16,9 @@ export class TranslationComponent {
   public add() {
     this.translationService
       .addTranslation(this.translation)
-      .subscribe(newTranslation => this.translation = new Translation())
+      .subscribe(() => {
+        this.translation.text = '';
+        this.translation.translation = '';
+      })
   }
 }
